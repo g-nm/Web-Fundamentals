@@ -1,0 +1,18 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+}
+body {
+	padding: 10px;
+}
+table {
+	border-spacing: 0.5rem;
+	border-collapse: collapse;
+}
+
+td,
+th {
+	border: 1px solid black;
+	padding: 0.5rem;
+}
