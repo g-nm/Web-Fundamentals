@@ -3,63 +3,87 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<head>
 		<title>Grid</title>
-		<style>
-			.container {
-				display: grid;
-				/* Three equal columns */
-				/* grid-template-columns: 1fr 1fr 1fr; */
-				/* Minmax function */
-				/* grid-template-columns: minmax(200px, 1fr) 3fr; */
-				/* repeat function */
-				grid-template-columns: [col1] 1fr [col2] 1fr [col3] 1fr [col-end];
-				grid-template-rows: repeat(4, 1fr);
-				/* grid-template-areas:
-					"header header header"
-					"leftsidebar main rightsidebar"
-					"footer footer footer"; */
-				/* named grid lines */
-				/* grid-template-columns: [first] 1fr [second] 1fr [third] 1fr [last]; */
-				/* grid-template-columns: repeat(3, 1fr [col-start]); */
-				place-items: start stretch;
-				/* place-content: center; */
-				gap: 30px;
-				grid-auto-columns: 100px;
-				/* text-align: center; */
-
-				/* grid-template:
-					"header header header"
-					"leftsidebar main rightsidebar"
-					"footer footer footer" / 1fr 1fr 1fr; */
-			}
-			.item {
-				padding: 10px;
-				background-color: orange;
-			}
-			.item1 {
-				grid-column: 10/11;
-			}
-			/* .item2 {
-				grid-area: leftsidebar;
-			}
-			.item3 {
-				grid-area: main;
-			}
-			.item4 {
-				grid-area: rightsidebar;
-			}
-			.item5 {
-				grid-area: footer;
-			} */
-		</style>
+		<link rel="stylesheet" href="style.css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
+			integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 	</head>
 	<body>
 		<div class="container">
-			<div class="item item1">1</div>
-			<div class="item item2">2</div>
-			<div class="item item3">3</div>
-			<div class="item item4">4</div>
-			<div class="item item5">5</div>
-			<!-- <div class="item item6">6</div> -->
+			<h1>Places to travel in 2022</h1>
+			<main class="main__content-container">
+				<div class="card">
+					<img
+						src="https://images.unsplash.com/photo-1590673452623-cf094b5e08f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80"
+						alt="Overlooking the City of Florence with Mountains and a Cloudy Sky"
+					/>
+					<div class="card__container">
+						<p>Visit Italy to enjoy culture and fancy delicacies</p>
+						<a href="#" class="card__link"
+							><i class="far fa-paper-plane"></i
+							><span>Visit Italy</span></a
+						>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						src="https://images.unsplash.com/photo-1642873744568-a7c5f7d10aae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=451&q=80"
+						alt="New york time square advertisement everywhere"
+					/>
+					<div class="card__container">
+						<p>Visit New york and experience the modern city life</p>
+						<a href="#" class="card__link"
+							><i class="far fa-paper-plane"></i>
+							<span> Visit New york</span></a
+						>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						src="https://images.unsplash.com/photo-1642689395019-c66d9b521e44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+						alt="Looking at the top of a temple in China"
+					/>
+					<div class="card__container">
+						<p>Visit China to experince the peace and tranquelity</p>
+						<a href="#" class="card__link"
+							><i class="far fa-paper-plane"></i
+							><span>Visit China </span></a
+						>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						src="https://images.unsplash.com/photo-1642780893858-93c776aa8ded?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+						alt="Pamphlets on the streets of Monaco"
+					/>
+					<div class="card__container">
+						<p>Come visit Monaco and experience Formula 1 racing</p>
+						<a href="#" class="card__link">
+							<i class="far fa-paper-plane"></i
+							><span> Visit Monaco</span></a
+						>
+					</div>
+				</div>
+				<div class="card">
+					<img
+						src="https://images.unsplash.com/photo-1642895688166-6e2234738d5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+						alt="Water parachuting during the golden hour."
+					/>
+					<div class="card__container">
+						<p>
+							Visit Cyprus for extreme water sports and the beautiful
+							sunsets
+						</p>
+						<a href="#" class="card__link"
+							><i class="far fa-paper-plane"></i>
+							<span>Visit Cyprus</span>
+						</a>
+					</div>
+				</div>
+			</main>
 		</div>
 	</body>
 </html>
