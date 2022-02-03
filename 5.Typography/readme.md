@@ -25,7 +25,7 @@ Monospace fonts have equal spacing between the glyphs hence the mono(one space)
 
 ### Using fonts on the web
 
-FOnts can be added to awebsite using @fontface declaration such as the below
+Fonts can be added to a website using @fontface declaration such as the below
 
 ```css
 @font-face {
