@@ -43,8 +43,8 @@ Incases where a fixed height and width (by default flex items try to fit on one 
 ```
 
 -  The flex shorthand property can be used to define
-   -  flex-grow which denotes how many times will the flex item in comparison to it's counter parts
-   -  flex-shrink which defines how far the element will shrink to prevent an overflow
+   -  flex-grow which denotes how many times will the flex item in comparison to it's counter parts. Defaults to 0
+   -  flex-shrink which defines how far the element will shrink to prevent an overflow. Every flex item has a default flex shrink of 1 making the element occupy the smallest space possible
    -  flex-basis which is the minimum size of a flex item. Flex basis can also override a width and height set on an item
 
 ```css

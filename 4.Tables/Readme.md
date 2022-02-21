@@ -1,6 +1,6 @@
 ## Introduction to tables
 
-The table element is used to display tabular data. THis is data which is normally displayed in a spreadsheet in the form of rows and columns.
+The table element is used to display tabular data. This is data which is normally displayed in a spreadsheet in the form of rows and columns.
 The below is an example of a simple table
 
 ```html

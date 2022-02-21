@@ -6,7 +6,7 @@
 
 -  Basic link - links to an absolute URL
 -  Relative Link - Link to other URLS under the same site
--  Jump/Hash link - USed to scroll elements in the page with similar id names
+-  Jump/Hash link - Used to scroll elements in the page with similar id names
 
 ```html
 <!-- Basic implementation -->
@@ -22,7 +22,7 @@
 
 ### Link attributes
 
--  If you would like a link to open in a new tab use the target attribute ana set it to _\_blank_
+-  If you would like a link to open in a new tab use the target attribute and set it to _\_blank_
 -  This should only be used if the user is still using the current page for example when content has not been saved
 
 ```html
@@ -106,7 +106,7 @@
 
 ### Javascript considerations on links
 
--  A link has a default behavior of shifting the user's focus to a new page or content, to prevent this default behavior the function **preventDefault()**
+-  A link has a default behavior of shifting the user's focus to a new page or content, to prevent this default behavior use the function **preventDefault()**
 
 ```JS
 const jumpLinks = document.querySelectorAll("a[href^='#']");
@@ -119,4 +119,4 @@ jumpLinks.forEach(link => {
 });
 ```
 
--  To prevent the user from opening another link in scenarios sucha s content has not been save by the user a beforeunload event can be added to the window object
+-  To prevent the user from opening another link in scenarios such as content has not been save by the user a beforeunload event can be added to the window object

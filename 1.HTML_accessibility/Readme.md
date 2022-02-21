@@ -12,14 +12,14 @@ intended purpose as much as possible.Using the correct html elements has built i
 ### Good Semantics
 
 -  Should display text content using the appropriate HTML elements such as headings,paragraphs and lists
--  Should use clear language e.g avoid dashes in numbering !(5-7) use 5 to 7, avoid abbreviations and expand acronyms
+-  Should use clear language e.g avoid dashes in numbering not(5-7) use 5 to 7, avoid abbreviations and expand acronyms
 -  Should use the appropriate sectioning html elements such as header,nav,aside,footer
 -  Should have the appropriate UI controls which improve keyboard accessibility through tabbing
 -  Use meaningful text labels such as on links and form inputs
--  Use alt text in images this helps the visually impaired understand what an image potrays images, using a title in an image also provides a tool tip with the title text
+-  Use alt text in images this helps the visually impaired understand what an image portrays , using a title in an image also provides a tool tip with the title text
 
 Attributes such as tabindex give elements a custom tab order, by setting the tabindex to 0 (tabindex="0")
-an element which is not tabbable becomes tabbable and by setting it to -1 makes the element focusable programmatically
+an element which is not tabbable becomes tabbable(focus) and by setting it to -1 makes the element focusable programmatically
 
 ### Accessible data tables
 
