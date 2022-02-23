@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			dialog {
+				border: none;
+				animation: test 1s;
+				animation-direction: normal;
+			}
+			dialog,
+			dialog::backdrop {
+				animation: test 1s;
+				animation-direction: normal;
+			}
+			dialog::backdrop {
+				background-color: rgb(63, 42, 245);
+				filter: blur(2rem);
+			}
+			@keyframes test {
+				from {
+					transform: translateX(-200%);
+				}
+				to {
+					transform: translateX(0);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<button id="show-dialog">Show dialog</button>
+		<dialog id="dialog">
+			<p>Greetings one add all</p>
+			<form action="">
+				<input type="text" name="" id="" />
+				<input type="text" name="" id="" /><input
+					type="text"
+					name=""
+					id=""
+				/><input type="text" name="" id="" /><input
+					type="text"
+					name=""
+					id=""
+				/>
+			</form>
+			<button id="close-dialog">Close me</button>
+		</dialog>
+
+		<form action="">
+			<input type="text" name="" id="" />
+			<input type="text" name="" id="" /><input
+				type="text"
+				name=""
+				id=""
+			/><input type="text" name="" id="" /><input
+				type="text"
+				name=""
+				id=""
+			/>
+		</form>
+	</body>
+
+	<script>
+		const button = document.querySelector("#show-dialog");
+		const close_button = document.querySelector("#close-dialog");
+		const dialog = document.querySelector("#dialog");
+		// console.log(dialog);
+		button.addEventListener("click", function (e) {
+			dialog.showModal();
+			console.log(dialog);
+		});
+		close_button.addEventListener("click", function (e) {
+			dialog.close();
+			// button.focus();
+		});
+	</script>
+</html>
