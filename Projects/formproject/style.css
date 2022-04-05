@@ -1,0 +1,66 @@
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+form {
+	width: 20%;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+li {
+	padding-block: 1em;
+}
+.list-item {
+	display: flex;
+	flex-direction: column;
+}
+input {
+	padding-block: 0.5em;
+	padding-inline-start: 0.5em;
+	border-radius: 0.2em;
+	outline: none;
+	border: 1px solid gray;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+.select_fruit {
+	width: 100%;
+	border: none;
+	opacity: 0;
+	padding-block: 0.7em;
+	padding-inline-start: 0.5em;
+	border-radius: 0.2em;
+}
+
+.select_wrapper {
+	position: relative;
+}
+.select_element {
+	position: absolute;
+	width: 100%;
+
+	/* background-color: white; */
+	border: 1px solid gray;
+	pointer-events: none;
+	padding-block: 0.5em;
+	padding-inline-start: 0.5em;
+	border-radius: 0.2em;
+}
+.select_element::after {
+	position: absolute;
+	right: 0;
+	width: 10%;
+	height: 100%;
+	background-color: red;
+}
+div[aria-live] {
+	color: red;
+}
