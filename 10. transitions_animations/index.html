@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>animation</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+
+				min-height: 100vh;
+				padding-block-start: 1em;
+			}
+			.dot {
+				width: 30px;
+				height: 30px;
+				background-color: rgb(163, 6, 163);
+				position: relative;
+				border-radius: 50%;
+				margin: 0 auto;
+			}
+			.dot::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: rgb(204, 10, 204);
+				z-index: -1;
+				border-radius: 50%;
+				animation: pulse 1000ms ease-in-out infinite;
+			}
+			@keyframes pulse {
+				0% {
+					opacity: 0;
+				}
+				50% {
+					opacity: 0.4;
+					transform: scale(1.4);
+				}
+			}
+			.mymarque {
+				background-color: teal;
+				color: black;
+				width: 100%;
+			}
+			.mymarque > span {
+				font-size: 5rem;
+				display: inline-block;
+				/* transform: translate3d(calc(100vw - 6ch), 0, 0); */
+				animation: mymarquee 30s linear infinite;
+			}
+			@keyframes mymarquee {
+				50% {
+					transform: translate3d(calc(100vw - 6ch), 0, 0);
+					/* transform: translateX(calc(100vw - 6ch)); */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dot"></div>
+		<div class="mymarque">
+			<span>my text</span>
+		</div>
+	</body>
+</html>
