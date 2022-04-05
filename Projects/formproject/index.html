@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Forms and inputs project</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="index.js" defer></script>
+	</head>
+	<body>
+		<form class="form" novalidate>
+			<ul>
+				<li class="list-item">
+					<label for="name">Name</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						aria-describedby="name_alert"
+						required
+					/>
+					<div aria-live="polite" id="name_alert"></div>
+				</li>
+				<li class="list-item">
+					<label for="email">Email</label
+					><input
+						type="email"
+						id="email"
+						name="email"
+						aria-describedby="email_alert"
+						required
+					/>
+					<div aria-live="polite" id="email_alert"></div>
+				</li>
+				<li class="list-item">
+					<label for="password">Password</label
+					><input
+						type="password"
+						id="password"
+						name="password"
+						aria-describedby="password_alert"
+						required
+					/>
+					<div aria-live="polite" id="password_alert"></div>
+				</li>
+				<li class="list-item">
+					<label for="date">Date</label
+					><input
+						type="date"
+						id="date"
+						name="date"
+						aria-describedby="date_alert"
+						required
+					/>
+					<div id="date_alert" aria-live="polite"></div>
+				</li>
+				<li class="list-item">
+					<label for="file">File</label>
+					<input
+						type="file"
+						name="file"
+						id="file"
+						aria-describedby="file_alert"
+						required
+					/>
+					<div id="file_alert" aria-live="polite"></div>
+				</li>
+				<li class="list-item">
+					<fieldset>
+						<legend>Items you are insuring</legend>
+						<input
+							type="checkbox"
+							name="insure_object"
+							id="tv"
+							value="tv"
+							aria-describedby="checkbox_alert"
+						/><label for="tv">Television</label
+						><input
+							type="checkbox"
+							name="insure_object"
+							id="house"
+							value="house"
+							aria-describedby="checkbox_alert"
+						/><label for="house">House</label
+						><input
+							type="checkbox"
+							name="insure_object"
+							id="phone"
+							value="phone"
+							aria-describedby="checkbox_alert"
+						/><label for="phone">Phone</label>
+					</fieldset>
+					<div id="checkbox_alert" aria-live="polite"></div>
+				</li>
+				<li class="list-item">
+					<fieldset>
+						<legend>Select your gender</legend>
+						<input
+							type="radio"
+							name="gender"
+							id="female"
+							value="female"
+							required
+							aria-describedby="radio_alert"
+						/><label for="female">Female</label
+						><input
+							type="radio"
+							name="gender"
+							id="male"
+							value="male"
+							aria-describedby="radio_alert"
+						/><label for="male">Male</label
+						><input
+							type="radio"
+							name="gender"
+							id="notsay"
+							value="rathernotsay"
+							aria-describedby="radio_alert"
+						/><label for="notsay">Rather not say</label>
+					</fieldset>
+					<div id="radio_alert" aria-live="polite"></div>
+				</li>
+				<li class="list-item">
+					<label for="select_fruit">Select your favorite fruit</label>
+					<div class="select_wrapper">
+						<div class="select_element">Not specified</div>
+						<select
+							name="favorite_fruit"
+							id="select_fruit"
+							aria-describedby="fruit_alert"
+							class="select_fruit"
+							required
+						>
+							<option value="">Not specified</option>
+							<option value="apple">Apple</option>
+							<option value="mango">Mango</option>
+						</select>
+					</div>
+					<div id="fruit_alert" aria-live="polite"></div>
+				</li>
+				<li>
+					<button type="submit">Submit Form</button
+					><button type="reset">Reset Form</button>
+				</li>
+			</ul>
+		</form>
+	</body>
+</html>
