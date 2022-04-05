@@ -4,7 +4,7 @@ const select = document.querySelector('select');
 const selectelement = document.querySelector('.select_element');
 const elements = [...inputs, select];
 const change_event = new Event('resetselect', { bubbles: true });
-const checkvalidity = (e) => {
+const checkvalidity = (e, type = '') => {
 	const validity = e.validity.valid;
 	const alertelementid = e.getAttribute('aria-describedby');
 	const message = e.validationMessage;
@@ -13,6 +13,10 @@ const checkvalidity = (e) => {
 		: null;
 
 	if (message && alertelement && !validity) {
+		if (type === 'reset') {
+			alertelement.textContent = '';
+			return;
+		}
 		alertelement.textContent = message;
 		return;
 	} else {
@@ -53,9 +57,13 @@ form.addEventListener('submit', (e) => {
 		}
 	}
 });
-form.addEventListener('reset', () => select.dispatchEvent(change_event));
+form.addEventListener('reset', () => {
+	select.dispatchEvent(change_event);
+	elements.forEach((element) => checkvalidity(element, 'reset'));
+});
 
 elements.forEach((element) => {
 	element.addEventListener('input', (e) => checkvalidity(e.target));
 	element.addEventListener('invalid', (e) => checkvalidity(e.target));
+	element.addEventListener('reset', (e) => checkvalidity(e.target, e.type));
 });
