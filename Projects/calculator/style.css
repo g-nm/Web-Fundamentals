@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+:root {
+	--fs: clamp(1rem, 1vw, 2rem);
+}
+body {
+	margin: 0;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	background-color: rgb(39, 38, 38);
+}
+main {
+	width: min(90%, 1000px);
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 1em;
+}
+input {
+	grid-column: 1/-1;
+	padding: 1em;
+	border: 2px solid gray;
+	border-radius: 0.4em;
+	outline: none;
+	font-size: var(--fs);
+	font-weight: 700;
+	color: gray;
+}
+button {
+	background-color: limegreen;
+	border: none;
+	color: white;
+	padding: 1.5em 1em;
+	border-radius: 0.4em;
+	font-weight: 700;
+	font-size: var(--fs);
+	cursor: pointer;
+}
+.button__del {
+	background-color: rgb(184, 53, 53);
+}
+.button__ac {
+	background-color: rgb(255, 0, 0);
+}
+.button__equals {
+	background-color: rgb(23, 172, 231);
+	grid-column: 3/-1;
+}
