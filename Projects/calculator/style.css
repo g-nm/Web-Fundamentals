@@ -47,5 +47,8 @@ button {
 }
 .button__equals {
 	background-color: rgb(23, 172, 231);
-	grid-column: 3/-1;
+	grid-column: 2/-1;
+}
+.calculator [data-state='selected'] {
+	background-color: rgb(13, 139, 13);
 }
