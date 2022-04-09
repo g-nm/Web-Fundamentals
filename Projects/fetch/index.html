@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fetch weather</title>
+	</head>
+	<body>
+		<button class="getweather">Get weather in my location</button>
+		<script>
+			const buttonGetWeather = document.querySelector('.getweather');
+			const span = document.createElement('span');
+			buttonGetWeather.insertAdjacentElement('afterend', span);
+			const key = 'b356277e879f12cea272403935b88084';
+			const getweather = async (lat, long) => {
+				try {
+					let result = await fetch(
+						`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`
+					);
+					const { main, name, weather } = await result.json();
+					console.log(main, weather, name);
+					return {
+						temp: (parseFloat(main.temp) - 273.15).toFixed(2),
+						name,
+						weather: weather[0].main,
+					};
+				} catch (error) {
+					console.log(error);
+				}
+			};
+
+			const getlocation = (e) => {
+				navigator.geolocation.getCurrentPosition(
+					({ coords }) => {
+						span.textContent = `Lat:${coords.latitude} Long:${coords.longitude}`;
+						getweather(coords.latitude, coords.longitude)
+							.then(({ name, temp, weather }) => {
+								span.textContent = `${span.textContent} Location:${name},Temp:${temp},Weather:${weather}`;
+							})
+							.catch((error) => {
+								console.log(error);
+							});
+					},
+					(error) => {
+						span.textContent =
+							'location is not allowed please allow it to get current weather';
+
+						// console.log(e.target);
+						console.log(error);
+					}
+				);
+			};
+			buttonGetWeather.addEventListener('click', getlocation);
+		</script>
+	</body>
+</html>
