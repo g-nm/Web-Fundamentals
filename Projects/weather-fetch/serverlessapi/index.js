@@ -1,18 +1,20 @@
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
+const corsHeaders = {
+  'Access-Control-Allow-Origin':'*',
+  'Access-Control-Allow-Methods':'POST',
+  'Access-Control-Allow-Headers':'*',
+}
 const createResponse = (data=[] ,statusCode=200)=>{
   return new Response(JSON.stringify(data),{
     status:statusCode,
-    headers:{'Content-type':'application/json'}
+    headers:{'Content-type':'application/json',
+  ...corsHeaders}
   })
   }
-/**
- * Respond with hello worker text
- * @param {Request} request
- */
-async function handleRequest(request) { 
-  const {query} = await request.json();
+const getWeather = async(request)=>{
+  const {query} = await request.json();  
  const querytype = typeof query;
  
   if (querytype === 'string') {
@@ -29,8 +31,7 @@ async function handleRequest(request) {
       lat,
       lon
       }
-    })
-    console.log(weatherdata)
+    })    
     return createResponse(weatherdata);
   }else if (querytype==='object' ) {
     const {lat,lon} = query
@@ -49,5 +50,16 @@ async function handleRequest(request) {
   else{
     return createResponse(undefined,400)
   }  
+}
+
+ 
+async function handleRequest(request) { 
+  if (request.method === 'OPTIONS') {
+    return new Response('OK',{headers:corsHeaders})
+  }
+  if (request.method==='POST') {    
+    return getWeather(request);
+  }
+  
 }
 
