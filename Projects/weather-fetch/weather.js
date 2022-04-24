@@ -42,9 +42,9 @@ const setDocumentElements = (data) => {
 
 	const { icon, description } = weather[0];
 	const { temp, humidity } = main;
-	weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
+	weatherIcon.src = `https://openweathermap.org/img/wn/${icon}@4x.png`;
 	weatherIcon.alt = description;
-	weatherCardIcon.src = `http://openweathermap.org/img/wn/${icon}.png`;
+	weatherCardIcon.src = `https://openweathermap.org/img/wn/${icon}.png`;
 	weatherCardIcon.alt = description;
 	weatherLocation.innerText = `${name},${state},${country}`;
 	weatherinfotext.innerText = description;
