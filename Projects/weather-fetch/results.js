@@ -20,6 +20,8 @@ const createLocationElements = (locationresponses) => {
 	url.searchParams.append('lat', null);
 	url.searchParams.append('lon', null);
 	const results = document.querySelector('.results');
+	const resultdetails = document.createElement('div');
+	resultdetails.innerText = 'No results found';
 	const locationelements = locationresponses.map(
 		({ lat, lon, name, state, country }) => {
 			const linktolocation = document.createElement('a');
@@ -30,19 +32,37 @@ const createLocationElements = (locationresponses) => {
 			url.searchParams.set('lon', lon);
 			linktolocation.href = url.href;
 			locationdetails.innerText = `${name}, ${state}, ${country}`;
+			linktolocation.addEventListener('click', (e) => {
+				localStorage.setItem('name', JSON.stringify(name));
+				localStorage.setItem('state', JSON.stringify(state));
+				localStorage.setItem('country', JSON.stringify(country));
+			});
 			arrow.src = 'assets/Arrow 4.svg';
 			arrow.alt = 'Arrow pointing right';
 			linktolocation.append(...[locationdetails, arrow]);
 			return linktolocation;
 		}
 	);
+	if (!locationelements.length) {
+		results.append(...[resultdetails]);
+		return;
+	}
+
 	results.append(...locationelements);
 };
+
 goback.addEventListener('click', (e) => {
-	history.back();
+	const { origin } = location;
+	if (history.length) {
+		history.back();
+		return;
+	}
+
+	location.assign(`${origin}/index.html`);
 });
 addEventListener('load', async (e) => {
 	const { href } = window.location;
+
 	const url = new URL(href);
 	const queryLocation =
 		url.searchParams.get('queryLocation') ||
