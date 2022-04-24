@@ -36,7 +36,7 @@ main.container {
 }
 .header__title::after {
 	content: '';
-	width: 6ch;
+	width: 5ch;
 	height: 3px;
 	background-color: #f59627;
 	position: absolute;
